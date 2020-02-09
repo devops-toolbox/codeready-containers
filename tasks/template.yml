@@ -1,0 +1,10 @@
+---
+# Template configuration files for codeready-containers
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ codeready-containers_templates_copy }}"
+  when: codeready-containers_copy_templates

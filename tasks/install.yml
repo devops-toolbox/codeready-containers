@@ -1,0 +1,27 @@
+---
+# Install codeready-containers packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ codeready-containers_packages_remove }}"
+    state: absent
+  become: true
+  when: codeready-containers_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ codeready-containers_packages_repos }}"
+    state: "{{ codeready-containers_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ codeready-containers_packages_prereq }}"
+    state: "{{ codeready-containers_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ codeready-containers_packages_install }}"
+    state: "{{ codeready-containers_packages_state }}"
+  become: true

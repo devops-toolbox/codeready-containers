@@ -1,0 +1,19 @@
+---
+# defaults file for codeready-containers
+
+codeready-containers_packages_state: present
+codeready-containers_remove_packages: true
+codeready-containers_enable_service: true
+codeready-containers_enable_selinux: true
+codeready-containers_copy_templates: true
+codeready-containers_firewall_configure: true
+codeready-containers_firewall_rules:
+  - service: ssh
+  - port: 3389
+codeready-containers_users:
+  - user: devops
+    group: docker
+codeready-containers_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

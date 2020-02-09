@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+codeready-containers_repos_create: "{{ _codeready-containers_repos_create['all']
+  | union ( _codeready-containers_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+codeready-containers_repos_download: "{{ _codeready-containers_repos_download['all']
+  | union ( _codeready-containers_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+codeready-containers_templates_copy: "{{ _codeready-containers_templates_copy['all']
+  | union ( _codeready-containers_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+codeready-containers_services_enable: "{{ _codeready-containers_services_enable['all']
+  | union ( _codeready-containers_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+codeready-containers_selinux_enable: "{{ _codeready-containers_selinux_enable['all']
+  | union ( _codeready-containers_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+codeready-containers_packages_remove: "{{ _codeready-containers_packages_remove['all']
+  | union ( _codeready-containers_packages_remove[my_os]
+  | default([]) ) }}"
+codeready-containers_packages_repos: "{{ _codeready-containers_packages_repos['all']
+  | union ( _codeready-containers_packages_repos[my_os]
+  | default([]) ) }}"
+codeready-containers_packages_prereq: "{{ _codeready-containers_packages_prereq['all']
+  | union ( _codeready-containers_packages_prereq[my_os]
+  | default([]) ) }}"
+codeready-containers_packages_install: "{{ _codeready-containers_packages_install['all']
+  | union ( _codeready-containers_packages_install[my_os]
+  | default([]) ) }}"
