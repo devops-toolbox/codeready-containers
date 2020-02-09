@@ -8,10 +8,10 @@ codeready-containers: Codeready-containers
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.codeready-containers](https://galaxy.ansible.com/devops-toolbox.codeready-containers)
+[https://galaxy.ansible.com/devopstoolbox.codeready-containers](https://galaxy.ansible.com/devopstoolbox.codeready-containers)
 
 ```bash
-ansible-galaxy install devops-toolbox.codeready-containers
+ansible-galaxy install devopstoolbox.codeready-containers
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: codeready-containers is configured
       import_role:
-        name: devops-toolbox.codeready-containers
+        name: devopstoolbox.codeready-containers
       vars:
         codeready-containers_packages_state: present
         codeready-containers_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
